@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+.card {
+  width: 300px;
+  padding: 20px;
+  background: linear-gradient(196deg, #e0e591 31%, rgba(70, 243, 255, 0.527) 64%);
+}
+
+.card .card_head {
+  width: 100%;
+}
+
+.card .card_head img {
+  width: 100%;
+}
+
+.card p {
+  font-size: 30px;
+  color: #ddd6d6;
+}
+/*# sourceMappingURL=main.css.map */

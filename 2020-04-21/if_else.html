@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if...else判斷</title>
+</head>
+
+<body>
+    <h1 class="title"></h1>
+    <script>
+        var title = document.querySelector('.title');
+        var lunch = "麵條";
+        if (lunch == "水餃") {  //判斷lunch是不是等於水餃
+            title.textContent = "是的";  //如果是等於，執行的條件
+
+        }
+        else {
+            title.textContent = "不是";  //不是等於，執行的條件
+        }
+        console.log(typeof lunch)   //在控制台查看資料的形態
+    </script>
+</body>
+
+</html>

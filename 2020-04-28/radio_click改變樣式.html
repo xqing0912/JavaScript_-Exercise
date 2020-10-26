@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+
+            padding: 10px;
+            border: hotpink;
+            border-width: 2px;
+            background-color: khaki;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="" method="POST">
+
+        <label for="#title">
+            <input id="title" type="radio" name="chose">
+            <span></span>
+        </label>
+
+        <label for="#title">
+            <input id="title" type="radio" name="chos">
+        </label>
+        <label for="#title">
+            <input id="title" type="radio" name="chos">
+        </label>
+        <label for="#title">
+            <input id="title" type="radio" name="chos">
+
+        </label>
+
+
+    </form>
+    <script>
+        var label_radio = document.querySelector('#title');
+        var input_radio = document.querySelector('input span');
+        label_radio.addEventListener('click', function () {
+
+            input_radio.classList.add('block');
+        });
+    </script>
+</body>
+
+</html>

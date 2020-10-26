@@ -1,0 +1,23 @@
+@import '_style_guild.scss';
+// 
+body{
+    margin: 0;
+}
+.card{
+    width: 300px;
+    padding: 20px;
+  
+    @include div-gradient( rgb(224, 229, 145),rgba(70, 243, 255));
+
+    .card_head{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+        p{
+        font-size: $mid_title;
+        color: rgb(221, 214, 214);
+        }
+
+    }

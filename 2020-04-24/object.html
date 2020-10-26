@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div_a {
+            width: 300px;
+            height: 300px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div_a"></div>
+    <script>
+        var data_all = {
+            name: '熊慶',
+            adrees: '四川南充',
+            now_adrees: '臺中市',
+            skill: ['吃飯', '睡覺', '打豆豆'],
+            like: ['追劇', '迪士尼電影']
+        }
+
+        // var data_single=data_all.skill[2];
+        //抓物件data_all裡面的skill中的索引第二筆
+
+        var data_single = data_all.skill;
+        //抓物件裡面的skill品相
+        console.log(data_single);
+        document.querySelector(".div_a").textContent = data_single
+    </script>
+</body>
+
+</html>

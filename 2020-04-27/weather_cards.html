@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather_cards</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .cards {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: space-around; */
+        }
+
+        .card {
+            width: 22%;
+            margin: 0 5px;
+            background-color: rgb(140, 140, 230);
+            padding: 1%;
+            margin-top: 10px;
+        }
+
+        .top img {
+            width: 100%;
+            /* height: 400px; */
+        }
+
+        .text {
+            text-align: center;
+            color: rgb(252, 240, 196);
+        }
+
+        .time {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="time"></h1>
+    <div class="cards">
+        <div class="card">
+            <div class="top">
+                <img src="img/yintian.jpg" alt="">
+            </div>
+            <h1 class="location text">台中市</h1>
+            <h3 class="weather text">多雲</h3>
+            <h3 class="temperature_high text">最高溫度：26℃</h3>
+            <h3 class="temperature_low text">最低溫度：20℃</h3>
+            <h3 class="description text">稍有寒意至舒適</h3>
+        </div>
+    </div>
+    <script>
+        fetch(
+                'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-65BFDF04-89C7-4B2C-BC06-7D18A29D0BDE'
+            )
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (weather_data) {
+                // console.log(weather_data);
+                var response_data = weather_data.records.location
+
+                response_data.forEach(data => {
+                    var locationName = data.locationName; //地點
+                    var parameterName = data.weatherElement[0].time[0].parameter.parameterName; //天氣
+                    var weather_h = data.weatherElement[4].time[0].parameter.parameterName //最高溫度
+                    var weather_l = data.weatherElement[2].time[0].parameter.parameterName // 最低溫度
+                    var weather_d = data.weatherElement[3].time[1].parameter.parameterName // 描述
+                    var wx_value = data.weatherElement[0].time[0].parameter.parameterValue; //天氣代碼
+
+                    if (wx_value >= 1 && wx_value <= 3) {
+                        var weather_img = 'img/duoyun.jpg';
+                    } else if (wx_value > 3 && wx_value < 8) {
+                        var weather_img = 'img/yintian.jpg'
+                    } else {
+                        var weather_img = 'img/yu.jpg'
+                    }
+                    var cards = document.querySelector('.cards');
+                    cards.innerHTML +=
+                        `<div class="card">
+                            <div class="top">
+                                <img src="${weather_img}" alt="">
+                            </div>
+                            <h1 class="location text">${locationName}</h1>
+                            <h3 class="weather text">${parameterName}</h3>
+                            <h3 class="temperature_high text">最高溫度：${weather_h}℃</h3>
+                            <h3 class="temperature_low text">最低溫度：${weather_l}℃</h3>
+                            <h3 class="description text">${weather_d}</h3>
+                        </div> `
+                });
+
+                var time = document.querySelector('.time');
+                var date = new Date();
+                var curren_date = date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日';
+                var curren_time = date.getHours() + '時' + date.getMinutes() + '分' + date.getSeconds() + '秒';
+                time.innerHTML = `目前時間： ${curren_date}<br> ${curren_time}`;
+
+                function fresh_time() {
+                    var time = document.querySelector('.time');
+                    var date = new Date();
+                    var curren_date = date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日';
+                    var curren_time = date.getHours() + '時' + date.getMinutes() + '分' + date.getSeconds() + '秒';
+                    time.innerHTML = `目前時間： ${curren_date}<br> ${curren_time}`;
+                }
+                setInterval(fresh_time, 1000);
+            })
+    </script>
+</body>
+
+</html>

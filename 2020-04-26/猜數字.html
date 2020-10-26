@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>點我看答案</button>
+    <div class="result"></div>
+    <script>
+        var input_value = document.querySelector('input');
+        var button_click = document.querySelector('button');
+        var result = document.querySelector('.result');
+        // var answer = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+         var answer=20;
+        button_click.addEventListener('click', function(){
+            check();
+        });          
+                     
+        function check() {
+        // for (var i = 0; i < answer.length; i++) {
+                if (input_value.value == answer) {
+                    alert('恭喜你，猜對了');
+                   
+
+                } else {
+                    alert('請繼續猜');
+                }
+                // return;
+            }
+
+        // }
+    </script>
+</body>
+
+</html>

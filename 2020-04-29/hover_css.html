@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./hover.css/hover.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <style>
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .one {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 30px 50px;
+        }
+
+        .three {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(52, 165, 42);
+            margin: 30px 50px;
+        }
+
+        .two {
+            height: 50px;
+            width: 100px;
+            background-color: brown;
+            margin: 30px 50px;
+        }
+
+        .four {
+            height: 50px;
+            width: 100px;
+            background-color: rgb(165, 42, 118);
+            margin: 30px 50px;
+        }
+        a{
+            margin: 2em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="one hvr-grow">Add to Basket</div>
+        <div class="two hvr-wobble-vertical">Add to Basket</div>
+        <div class="three hvr-pulse-grow">Add to Basket</div>
+
+        <div class="four hvr-icon-pop">
+            Icon Forward
+            <i class="fas fa-paw hvr-icon"></i>
+        </div>
+        <a href="#" class="hvr-icon-spin">
+            Icon Spin            
+            <img src="./svg/parabolic-dishes.svg" class="hvr-icon" width="70em" />
+        </a>
+        <a href="#" class="hvr-icon-bob">
+            <img src="./svg/asteroid.svg" class="hvr-icon" width="70em"/>
+            Icon Bob
+        </a>
+    </div>
+</body>
+
+</html>

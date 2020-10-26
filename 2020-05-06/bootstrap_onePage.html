@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>movie</title>
+    <style>
+        * {
+            font-family: '微軟正黑體';
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* nav{
+    background-color: #D6C7C2;
+
+} */
+        #nav {
+            background-color: #D6C7C2 !important;
+        }
+
+        #navbarSupportedContent a {
+            color: #DC6B31;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 30px;
+        }
+
+        #navbarSupportedContent a:hover {
+            color: #6F7AB2;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-container .swiper-slide .bg_img {
+            width: 100%;
+            height: 800px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .pading {
+            padding: 60px 0;
+        }
+
+        .card {
+            width: 100%;
+
+
+        }
+
+        .card_bgimg {
+            width: 100%;
+            height: 300px;
+        }
+
+        .card .card-body {
+            height: 400px;
+        }
+
+        .card .card-body p {
+            text-align: justify;
+
+        }
+
+        .card .card-body a {
+            display: flex;
+            justify-content: center;
+            background-color: #FF7C48;
+        }
+
+        .card .card-body a:hover {
+            background-color: #74736E;
+        }
+
+        .parallax-mirror {
+            z-index: 1;
+        }
+
+        .parallax-window {
+            min-height: 400px;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parallax-window p {
+            color: rgb(213, 220, 226);
+            background-color: rgba(34, 36, 37, 0.6);
+            padding: 50px;
+            text-align: justify;
+            letter-spacing: 1px;
+        }
+
+        #section_four .row .col-12.col-md-6 {
+            padding: 20px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .align h2 {
+            text-align: center;
+        }
+
+        .foot {
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #D6C7C2;
+        }
+
+        .go_top {
+            position: fixed;
+            right: 30px;
+            bottom: 50px;
+        }
+
+        .go_top a {
+            color: rgb(177, 77, 43);
+            font-size: 50px;
+        }
+
+        .go_top a:hover {
+            color: #888685;
+        }
+
+        @media (max-width: 768px) {
+            #navbarSupportedContent {
+                display: flex;
+                justify-content: flex-end;
+            }
+            .nav-item{
+                margin-right: 1em;
+            }
+        }
+
+        @media (max-width: 990px) {
+            #navbarSupportedContent a {
+                font-size: 1em;
+                margin-right: unset;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="go_top">
+        <a href="#nav"><i class="fas fa-arrow-to-top"></i></a>
+    </div>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#D6C7C2 ;">
+        <div class="container ">
+            <a class="navbar-brand" href="#"><img
+                    src="https://jackaly.com/wp-content/uploads/2018/09/1536822490-a8b4a160548cc0eaa3b769f589df5904.jpg"
+                    height="80px" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#section_one">人物展示 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_two">劇情展示</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="#section_three">劇情截取</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#section_four">經典特色</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="section_one" class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide ">
+                    <div class="bg_img"
+                        style="background-image: url('https://media.vogue.com.tw/photos/5db807b59955940008845ace/16:9/w_1920,c_limit/2019020277376217.jpg');">
+                    </div>
+                </div>
+                <div class="swiper-slide ">
+                    <div class="bg_img"
+                        style="background-image: url('https://images.unsplash.com/flagged/photo-1572609239482-d3a83f976aa0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80');">
+                    </div>
+                </div>
+                <div class="swiper-slide ">
+                    <div class="bg_img"
+                        style="background-image: url('https://images.vocus.cc/aa72ee6f-269e-4339-92ff-6da8c6316ac3.jpeg');">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <section id="section_two" class="cards">
+        <div class="container pading">
+            <h2 class="text-center" style="padding: 20px;">動物方程式</h2>
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card_bgimg"
+                            style="background-image: url('https://static.wixstatic.com/media/6f2f48_91004d1880cb4fef8d5010a16f74fa42.jpg/v1/fill/w_620,h_349,al_c,q_80,usm_0.66_1.00_0.01/6f2f48_91004d1880cb4fef8d5010a16f74fa42.webp');">
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                主角兔朱迪·哈普斯（Judy
+                                Hopps）是一只来自农村兔窝镇（Bunnyburrow）的兔子，她在九岁时的一次舞台剧表演上立志要成为一名警察。当朱迪成年后，她进入动物城警官学校学习，最终毕业并成为动物城警察局的第一位兔子警官。没想到，朱迪离开兔窝镇来到动物城后，报到的第一天却被牛局长（ChiefBogo）指派担任不受重视的交通警员；而在她工作的第一个上午，朱迪在一间冰店结识了一名骗子狐狸尼克（Nick
+                                Wilde）和他的同伙芬尼克（Finnick）。
+                            </p>
+                            <a href="#" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card_bgimg"
+                            style="background-image: url('https://pic.pimg.tw/skyfree8899/1469978035-3548348557.jpg');">
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                朱迪在发现一名叫威斯顿公爵（Duke
+                                Weaselton）的黄鼠狼在一间花店行窃后，抛下了交通警员的工作，开始在全城追捕他。尽管她追捕有功，却因她擅离职守且不听上级指示，而遭到了牛局长的责骂，甚至险些被开除。当奥特顿夫人（Mrs.Otterton）来到牛局长的办公室恳求警方帮忙查找她失踪的丈夫阿密特·奥特顿先生（Mr.EmmittOtterton）时，在场的朱迪自愿接下了这个案子。
+                            </p>
+                            <a href="#" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card_bgimg"
+                            style="background-image: url('https://disney.lovesakura.com/Joke/c55_iphone.jpg');">
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                朱迪和尼克辗转前往冰川镇的一家礼车出租公司查找线索；他们在那里被冰川镇的犯罪头目大先生（Mr.Big）的手下发现并带到其家中，而朱迪和尼克也从他得知是阿密特·奥特顿先生袭击了他的司机曼查斯（Mr.RenatoManchas）。两人接着前往热带雨林区询问曼查斯，但他却突然发狂；朱迪调用总局协助后，牛局长和其他警员来到现场，但发狂的曼查斯却无处可寻。
+                            </p>
+                            <a href="#" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section_three" class="parallax-mirror">
+        <div class="parallax-window" data-parallax="scroll"
+            data-image-src="https://i1.hdslb.com/bfs/archive/d0a4ec0f0106f31bdfb92b8bf7dea188598e3929.jpg"
+            data-speed="0.5">
+            <p>朱迪回到兔窝镇后，发现用来驱虫的植物“午夜嚎叫”（Nighthowler）才是动物发狂的主因。接着，她赶回动物城查找尼克并向他道歉；两人和好后一同继续破案，两人先找到威斯顿公爵，希望可以找到破案的线索，威斯顿公爵正在卖一些DVD影片(影片名称则是从皮克斯做过的电影去做修改的)，但威斯顿公爵对两人的出现不以为然，甚至还出言不逊并挑衅，两人把他带到大先生将他逼供，威斯顿公爵告诉他到一个废弃的地铁站可以找到在秘密实验室里将午夜嚎叫制成子弹的公羊道格（Doug）。朱迪和尼克在顺利获取实验室的证据后欲奔往警局，途中却被已成为市长的羊副市长拦截。原来羊副市长就是整个事件的主谋，她不但设计让狮市长失势，还想借由煽动在群众的恐惧来掌握权力。后来，朱迪和尼克上演戏码欺骗羊副市长，并用录音笔将她主谋及陷害狮市长的供词录下，而赶到现场的警方也逮捕了羊副市长和她的同僚。最后，午夜嚎叫的解药被研发出来，所有受影响的动物亦逐渐康复，朱迪也回到警局再次担任警官；尼克则在从警官学校毕业后，成为动物城警局的第一位狐狸警官，以及朱迪的同伙警员。
+            </p>
+        </div>
+    </section>
+
+    <section id="section_four" class="img_text">
+        <div class="container pading">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="https://img.ruten.com.tw/s2/3/21/22/21813824361762_710.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="align">
+                        <h2>one</h2>
+                        <p>两人当上警察后，在分发工作时，再度被牛局长指派担任不受重视的交通警员；但牛局长只是想逗他们两个的，牛局长指派他们去抓一位飙车族，执勤途中，尼克抱怨朱迪开车太慢，朱迪报复性踩了刹车。两人在上次合作后，朱迪对尼克产生了好感，这时，飙车族出现了，两人展开了追逐，最后顺利阻止，却意外发现是闪电，闪电看到尼克，用很慢的速度，说出尼克的名字。故事的最后以夏奇羊的Try
+                            Everything作为结尾，而在牢里，羊副市长坐在牢里带着不屑的眼神看着电视。</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-1">
+                    <div class="align">
+                        <h2>two</h2>
+                        <p>朱迪回到兔窝镇后，发现用来驱虫的植物“午夜嚎叫”（Nighthowler）才是动物发狂的主因。接着，她赶回动物城查找尼克并向他道歉；两人和好后一同继续破案，两人先找到威斯顿公爵，希望可以找到破案的线索，威斯顿公爵正在卖一些DVD影片(影片名称则是从皮克斯做过的电影去做修改的)，但威斯顿公爵对两人的出现不以为然，甚至还出言不逊并挑衅，两人把他带到大先生将他逼供，威斯顿公爵告诉他到一个废弃的地铁站可以找到在秘密实验室里将午夜嚎叫制成子弹的公羊道格（Doug）。朱迪和尼克在顺利获取实验室的证据后欲奔往警局，途中却被已成为市长的羊副市长拦截。原来羊副市长就是整个事件的主谋，她不但设计让狮市长失势，还想借由煽动在群众的恐惧来掌握权力。后来，朱迪和尼克上演戏码欺骗羊副市长，并用录音笔将她主谋及陷害狮市长的供词录下，而赶到现场的警方也逮捕了羊副市长和她的同僚。最后，午夜嚎叫的解药被研发出来，所有受影响的动物亦逐渐康复，朱迪也回到警局再次担任警官；尼克则在从警官学校毕业后，成为动物城警局的第一位狐狸警官，以及朱迪的同伙警员。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-2">
+                    <img src="https://images.chinatimes.com/newsphoto/2016-04-09/900/20160409003493.jpg"
+                        class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="foot">
+        Copyright © 2020 . XiongQing Web Design
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 2000,
+            }
+        });
+        $('.parallax-window').parallax({
+            imageSrc: 'https://i1.hdslb.com/bfs/archive/d0a4ec0f0106f31bdfb92b8bf7dea188598e3929.jpg'
+        });
+        // (function ($) {
+        //     $(document).ready(function () {
+        //         $('.parallax-window').parallax({
+        //             imageSrc: 'https://i1.hdslb.com/bfs/archive/d0a4ec0f0106f31bdfb92b8bf7dea188598e3929.jpg'
+        //         });
+        //     });
+        // }(jQuery));
+    </script>
+</body>
+
+</html>

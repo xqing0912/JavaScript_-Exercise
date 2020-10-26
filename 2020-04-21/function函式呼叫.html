@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 5em;
+            height: 200px;
+            width: 200px;
+            background-color: rgb(57, 133, 86);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var box1 = document.querySelector('.box');
+        // 1.沒名字的函數（匿名函數），不需要呼叫，加上事件可以馬上執行
+        // box1.onclick = function () {
+        //     box1.textContent = "one two three";
+        // }
+        box1.onclick = function () {
+            test();
+        }
+        // 2.有名字的函數，需要運用的時候才呼叫，通常用在函數整理/打包，事件函數需要另外寫，在事件函數中呼叫有名函數
+        function test() {
+            box1.textContent = "one two three";
+            box1.style.backgroundColor = '#853939';
+
+        }
+    </script>
+</body>
+
+</html>

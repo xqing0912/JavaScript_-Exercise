@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 6000px;
+        }
+
+        .box {
+            margin: 900px 3em;
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            /* position: sticky; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box lax" data-lax-preset></div> -->
+    <div class="box lax" data-lax-opacity="1000 1, 700 0, 500 1 "></div>
+    <!-- 卷抽900px的時候，opacity（透明度）為1，卷抽700px的時候，opacity（透明度）為0，卷抽500px的時候，opacity（透明度）為1 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script>
+        window.onload = function () {
+            lax.setup() // init
+
+            const updateLax = () => {
+                lax.update(window.scrollY)
+                window.requestAnimationFrame(updateLax)
+            }
+            window.requestAnimationFrame(updateLax)
+        }
+    </script>
+</body>
+
+</html>

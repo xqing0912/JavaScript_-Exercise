@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 5000px;
+
+        }
+        /* .goToTop {
+            background-color: rgb(163, 90, 90);
+            width: 100px;
+            border-radius: 5px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+        } */
+        a {
+            text-decoration: none;
+            padding: 50px;
+            background-color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 20px;
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            color: cornsilk;
+            /* display: none; */
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" hidden>點我回到頂端</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            var scroll_value = $(this).scrollTop();
+            console.log(scroll_value);
+
+            if (scroll_value >= 1300) {
+                $('a').show();
+            } else {
+                $('a').hide();
+            }
+        })
+    </script>
+</body>
+
+</html>

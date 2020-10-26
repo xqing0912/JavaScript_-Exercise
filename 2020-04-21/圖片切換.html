@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="words"></div>
+    <img class="box" src="https://m.yh31.com/tp/zjbq/201308140633275846.jpg">
+    <script>
+        var img_HandPainted = document.querySelector('.box');
+        var qi_bi_word=document.querySelector('.words');
+        //宣告變數存取html的class元素
+        var img_new = img_HandPainted.getAttribute('src');
+        //宣告變數存取舊的img路徑
+
+        img_HandPainted.onclick = function () {
+            if (img_new = "https://m.yh31.com/tp/zjbq/ 201308140633275846.jpg") {
+                //如果抓到的路徑與原始圖片的路徑相同
+                img_HandPainted.setAttribute('src', "https://4.bp.blogspot.com/-cZwq95gLDXw/WHruRm4FESI/AAAAAAAF4Vc/lnGrlrswAgsfotQB-lmQmQETBpmJKBygACLcB/s1600/TW068899.png");
+                //就把原始圖片的路徑設定成新的路徑
+                qi_bi_word.textContent='好開心';
+            }
+            else {
+                img_HandPainted.setAttribute('src', "https://m.yh31.com/tp/zjbq/201308140633275846.jpg");
+                //否則原始圖片的路徑不變
+                qi_bi_word.textContent='好難過';
+            }
+        }
+    </script>
+</body>
+
+</html>

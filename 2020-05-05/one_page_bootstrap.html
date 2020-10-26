@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- swiper cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .outside {
+            width: 100%;
+        }
+
+        .full_page {
+            width: 100%;
+            /* position: relative; */
+
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide .img_3 {
+            width: 100%;
+            height: 800px;
+            background-image: url('img/9.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .swiper-slide .img_1 {
+            width: 100%;
+            height: 800px;
+            background-image: url('img/6.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .swiper-slide .img_2 {
+            width: 100%;
+            height: 800px;
+            background-image: url('https://cc.tvbs.com.tw/img/program/upload/2018/08/10/20180810134506-7b34e350.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .panding {
+            padding: 120px 0;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .card-body {
+            width: 100%;
+            /* height: 600px; */
+            /* display: flex;
+            justify-content: center;
+            ali */
+        }
+
+        .card-text {
+            height: 250px;
+            text-align: justify;
+        }
+
+        .card a {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(29, 177, 29);
+        }
+
+        .card a:hover {
+            background-color: rgb(226, 182, 37);
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+
+        .bg_img {
+            background-image: url('https://www.nousbuild.org/saidea/wp-content/uploads/2017/04/gasadalur.jpg');
+            /* position: fixed; */
+            width: 100%;
+            height: 1000px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg_img p {
+            padding: 30px;
+            text-align: justify;
+            color: rgb(247, 246, 244);
+            font-size: 20px;
+            background-color: rgba(65, 63, 56, 0.6);
+        }
+
+        .img_size {
+            width: 100%;
+            height: 500px;
+        }
+
+        .v-aligin {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mar_bottom {
+            margin-bottom: 50px;
+        }
+
+        .font {
+            padding: 30px;
+            text-align: justify;
+            color: rgb(27, 26, 23);
+            font-size: 20px;
+        }
+
+        .order {
+            order: 1;
+        }
+
+        .nav_bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+
+        }
+
+        .nav_bar .logo img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .nav-link {
+            color: rgb(7, 182, 7);
+            font-weight: bolder;
+        }
+
+        .nav-link:hover {
+            color: rgb(196, 76, 190);
+        }
+
+        .to_top {
+
+            position: fixed;
+            right: 30px;
+            bottom: 50px;
+            z-index: 10;
+        }
+
+        .to_top .fas {
+            font-size: 80px;
+
+            color: rgb(60, 148, 60);
+        }
+
+        .to_top .fas:hover {
+            color: rgb(223, 119, 119);
+        }
+
+        @media (min-width: 1800px) {
+
+            .container,
+            .container-lg,
+            .container-md,
+            .container-sm,
+            .container-xl {
+                max-width: 1600px;
+            }
+        }
+
+        @media (min-width: 1600px) {
+
+            .container,
+            .container-lg,
+            .container-md,
+            .container-sm,
+            .container-xl {
+                max-width: 1400px;
+            }
+        }
+
+        @media (min-width: 1920px) {
+
+            .container,
+            .container-lg,
+            .container-md,
+            .container-sm,
+            .container-xl {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="to_top">
+        <a href="#top"><i class="fas fa-arrow-to-top"></i></a>
+    </div>
+    <div class="container height">
+        <div id="top" class="nav_bar">
+            <div class="logo"><img src="img/logo.jpg" alt=""></div>
+            <div class="menu">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#one">美景導覽</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#two">世界美景</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#three">美景介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#four">美景地點</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="one" class="outside">
+        <div class="full_page">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ">
+                        <div class="img_1"></div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <div class="img_2"></div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <div class="img_3"></div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+    <div id="two" class="container panding">
+        <h1>世界美景</h1>
+        <div class="row">
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="https://i1.wp.com/inews.gtimg.com/newsapp_match/0/2915275026/0" class="card-img-top"
+                        alt="">
+                    <div class="card-body">
+
+                        <p class="card-text">
+                            哈爾施塔特鎮是奧地利上奧地利州薩爾茨卡默古特地區的一個村莊，也是奧地利最古老的小鎮，位於哈爾施塔特湖湖畔，海拔高度511米，被譽爲世界上最美的小鎮和「來自天堂的明信片」。這裡氣候溫暖，一年四季都適宜旅遊。海拔3000多米的山峰和清澈透底的湖泊，把這個地方變成了人間天堂。這座在險峻的斜坡和寶石般翡翠的湖泊間伫立的湖畔小鎮，到處可見童話般清幽美好的住宅，遙望湖上泛起清煙，仿佛來到人間仙境。
+                        </p>
+                        <a href="#" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="https://n.sinaimg.cn/sinacn10100/320/w1200h720/20190911/901a-iekuaqt6725657.jpg"
+                        class="card-img-top" alt="">
+                    <div class="card-body">
+
+                        <p class="card-text">
+                            布萊德小鎮坐落在阿爾卑斯山旁布萊德湖畔，是斯洛文尼亞最著名的度假勝地。所有來過布萊德湖的人，都無法忘記這裡美麗的景色。湖島上有聖瑪麗亞古教堂，湖岸峭壁上有布萊德城堡，登上城堡，碧綠的湖水，連綿的群山，美麗的小鎮盡收眼底。站在城堡上俯瞰，湖中心的小島像是鑲嵌在布萊德湖上的一顆眼睛，猶如仙境一般，享有「歐洲之眼」的美譽。
+                        </p>
+                        <a href="#" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="https://www.wilhelmchang.com/wp-content/uploads/2017/08/Hamnoy-1-e1534577775660.jpg"
+                        class="card-img-top" alt="">
+                    <div class="card-body">
+
+                        <p class="card-text">
+                            Hamnoy漁村是莫斯克斯內斯島上三個最美的小漁村之一，這裡的生活就像與世隔絕的仙境一樣，奇異突兀的山巒，幽藍攝人心魄的海水，廣闊無垠的曠野灘塗，童話般的小木屋，當你站在這裡就會有一種恍如隔世般甯靜穿越的感覺，一切都是那樣虛幻缥缈，恍如隔世，美不勝收！
+                        </p>
+                        <a href="#" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="three" class="full_page  v-aligin ">
+        <div class="bg_img">
+            <p>戈薩達魯爾村位於丹麥法羅群島內的一個小村莊，坐落在懸崖邊，周圍環繞著法羅群島的山頂，因爲地處偏遠，這個村莊只有18個人口，村內的小溪直接落入大西洋，雖然村莊在獨特的位置上可以俯瞰大海，但卻令人歎爲觀止。這裡曾被《美國國家地理》雜志評選爲50座世界最美島嶼之首！
+            </p>
+        </div>
+    </div>
+    </div>
+    <div id="four" class="outside">
+        <div class="container panding">
+            <div class="row mar_bottom ">
+                <div class="col-xl-6  col-sm-12">
+                    <img src="https://wecallbad.files.wordpress.com/2015/10/dsc_0656.jpg" class="img_size" alt="">
+
+                </div>
+                <div class="col-xl-6  col-sm-12 v-aligin  ">
+                    <p class="font">羊角村位於荷蘭西北方上艾瑟爾省的De Wieden自然保護區內。冰河時期De
+                        Wieden正好位在兩個冰碛帶之間，所以地勢比周邊來得低，造成土壤貧瘠且泥炭沼澤遍布，除了蘆葦與薹屬植物外，其它植物不易生長，唯一的資源就是地底下的泥煤。居民爲了挖掘出更多的泥煤塊以外賣賺錢而不斷開鑿土地，形成一道道狹窄的溝渠。後來，居民爲了使船只能夠通過、運送物資，將溝渠拓寬，而形成今日運河湖泊交織的美景。水面倒影著一幢幢綠色的小屋，被譽為「綠色威尼斯」。
+                    </p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6  col-sm-12 v-aligin ">
+                    <p class="font">
+                        拜伯麗鎮是英國科茨沃爾茲的一個小鎮，坐落於科倫河山谷之間，恬美、自然、甯靜，宛如油畫一般地詩情畫意，擁有一座輝煌的薩克遜時代的教堂和多處古跡，還有潺潺溪水，盈盈花草，高貴天鵝……這一切渾然交融，美得無以倫比。這裡也是科茨沃爾德地區繁榮的羊毛業的代表，更是英格蘭古色古香充滿詩情畫意的風格的縮影。
+                    </p>
+
+                </div>
+                <div class="col-xl-6  col-sm-12 ">
+                    <img src="https://1.bp.blogspot.com/-DibG4olE0yg/WqwLNpWJYNI/AAAAAAAAe7c/rj3yIm6CSeEN7zHjDHWYowFEN_5BYaRxQCLcBGAs/s1600/Chipping-Campden-2400x1600.jpg"
+                        class="img_size" alt="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--swiper   script cdn -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

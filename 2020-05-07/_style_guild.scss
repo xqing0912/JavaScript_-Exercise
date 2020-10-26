@@ -1,0 +1,9 @@
+$bg_color:#555;
+$big_title:25px;
+$mid_title:30px;
+// 這幾檔案都寫變數樣式，方便後面的scss套用， 前面加底線不會被編譯 
+@mixin div-gradient($left,$right) {
+    background: linear-gradient(196deg,$left 31%, $right 64%);
+   
+}
+

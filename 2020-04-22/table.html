@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>table 選單面板</title>
+    <style>
+        .display_line {
+            display: flex;
+        }
+
+        .title_botton {
+            padding: 20px 30px;
+            border: 1px solid orchid;
+        }
+
+        .title_botton:hover {
+            background-color: palevioletred;
+            cursor: pointer;
+        }
+
+        .box {
+            padding: 0 10px;
+            border: 1px solid orange;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .panel {
+
+            display: none;
+            /* 所有的面板先消失 */
+        }
+
+        .panel.active {
+            display: block;
+            /* 讓其中的某一個面板是顯示的狀態 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="display_line">
+        <div class="title_botton">one</div>
+        <div class="title_botton"> two</div>
+        <div class="title_botton">three</div>
+    </div>
+    <div class="box">
+        <div class="panel a ">
+            <div class="text">
+                <h1>one</h1>
+            </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati illum voluptas temporibus. Ea sint
+                ipsam nesciunt, ipsum minus vero ducimus et aut quia, natus totam delectus aspernatur quisquam? Quam,
+                commodi.</p>
+        </div>
+        <div class="panel active b">
+            <div class="text">
+                <h1>two</h1>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione praesentium, perferendis impedit fugiat
+                quidem eum harum? Cumque temporibus obcaecati assumenda est eius iste adipisci similique quod! Quod
+                doloremque laborum possimus.</p>
+        </div>
+        <div class="panel c">
+            <div class="text">
+                <h1>three</h1>
+            </div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates aut saepe dolorum possimus odit, in
+                accusamus modi illo aliquam. Consectetur, obcaecati. Incidunt molestias, cumque impedit accusantium
+                ullam aperiam perspiciatis iusto?</p>
+        </div>
+    </div>
+
+    <script>
+        const title_botton = document.querySelectorAll(".title_botton");
+        //querySelectorAll，選取所有相同名字的class元素
+        const panel = document.querySelectorAll('.panel');
+
+        //用迴圈給每個按鈕加上點擊事件
+        for (let a = 0; a < title_botton.length; a++) {
+            let b = title_botton[a];
+
+            //點擊按鈕，所有面板先消失，調用寫好的函數
+            b.addEventListener('click', function () {
+
+                remove_active();
+
+                //     1.因為nth-child（）是從123開始算，陣列的索引是從0開始，所以陣列的索引要+1，才能同步
+                //    2. 點擊相對應的按鈕，面板才會出現
+                let index_a = a + 1;
+                let panel = document.querySelector('.panel:nth-child(' + index_a + ')');
+                panel.classList.add("active");
+                give_color();
+
+            });
+        }
+        //先讓所有的面板都消失的函數，等待調用
+        function remove_active() {
+            for (let a = 0; a < panel.length; a++) {
+                let b = panel[a];
+                b.classList.remove("active");
+                // console.log("aaaa");
+            }
+        }
+
+        function give_color() {
+            for (let a = 0; a < panel.length; a++) {
+                let b = panel[a];
+
+                b.style.backgroundColor = "#FFCC80";
+                // console.log("aaaa");
+            }
+        }
+        // 邏輯：1.找到按鈕
+        // 2.給按鈕加點擊事件
+        // 3.所有的面板先消失，點按鈕時對應的才出現
+    </script>
+
+</body>
+
+</html>

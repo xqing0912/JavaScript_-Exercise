@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cards {
+            width: 100%;
+            border: 1px solid #666;
+            display: flex;
+
+        }
+
+        .cards .card {
+            width: 100%;
+            border: 1px solid #666;
+            text-align: center;
+            padding: 5px;
+
+
+        }
+
+        .pic {
+            width: 100%;
+
+
+        }
+
+        .pic img {
+            width: 100%;
+            height: 300px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cards">
+        <div class="card ">
+            <h1>花的名稱</h1>
+            <h2>透明花</h2>
+            <div class="pic">
+                <img src="https://4.bp.blogspot.com/-TKPucbLyrx0/VFCv3p9qt_I/AAAAAAAAA_0/7ml7rI8ADPs/s1600/10542_04.jpg"
+                    alt="">
+            </div>
+            <hr>
+            <div class="content">
+                <p>種類：山荷葉</p>
+                <p>分佈：主要分布於日本本州島北部和北海道的深山地區</p>
+                <p>介紹：花遇水就會如同玻璃般透明</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        var flowers = [
+            {
+                name_a: '花的名稱',
+                name: '蝴蝶花',
+                image: 'https://www.huabaike.com/uploads/allimg/sltimg/201612/585c777be8e1f.jpg',
+                kind: '鸢尾科鸢尾属的植物',
+                distributed: '分布在日本以及中国大陆的甘肃、广西、安徽、福建、湖南、云南、四川、江苏、广东、浙江、贵州、陕西、湖北等地',
+                description: '蝴蝶花，即三色堇，花色美丽特别，一般由三种深浅不一的颜色组成，十分吸引人。'
+            },
+            {
+                name_a: '花的名稱',
+                name: '鬱金香',
+                image: 'https://i.pinimg.com/originals/f0/77/92/f077921e20b5df5650fb378aa89d3d79.jpg',
+                kind: '是一类属于百合科郁金香属的具鳞茎草本植物',
+                distributed: '分佈南欧、西亚一直到东亚的中国东北一带',
+                description: '郁金香有的是黄的、红的、白的、紫的、还有橙的……我最喜欢的一种叫格丽特沃克的郁金香，它花瓣的边沿是小学黄的，里面是大红的。茎又粗又壮，上面还有一根根小细毛，像抹上了一层雪，美丽极了。'
+            },
+            {
+                name_a: '花的名稱',
+                name: '百合',
+                image: 'https://i1.wp.com/inews.gtimg.com/newsapp_bt/0/1768764278/641',
+                kind: '是百合目百合科的一属，为多年生草本球根植物',
+                distributed: '主要分布在亚洲东部、欧洲、北美洲等北半球温带地区',
+                description: '由于其外表高雅纯洁，天主教以白百合花为圣母玛利亚的象征'
+            }
+        ]
+        var cards = document.querySelector('.cards');
+        flowers.forEach((flower) => {
+            cards.innerHTML += `
+             <div class="cards">
+                 <div class="card ">
+                     <h1>${flower.name_a}</h1>
+                     <h2>${flower.name}</h2>
+                 <div class="pic">
+                    <img src="${flower.image}" alt="">
+                   
+                 </div>
+            <hr>
+            <div class="content">
+                <p>種類：${flower.kind}</p>
+                <p>分佈：${flower.distributed}</p>
+                <p>描述：${flower.description}</p>
+            </div>
+        </div>
+    </div>
+    </div>`
+        })
+    </script>
+</body>
+
+</html>
+　

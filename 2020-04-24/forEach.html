@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="data">
+    </div>
+    <script>
+        var data_a = document.querySelector('.data');
+        var array_a = [123, 456, 789, 121, 147, "258"];
+        array_a.forEach((single_data, index) => {
+            //   陣列的名稱.forEach（新的單筆資料的變數（自己取的名稱），索引=>{要執行的程式碼}）
+
+            data_a.innerHTML += `<h2>我是第${index + 1}筆資料:</h2><h1>${single_data}</h1><br>`;
+            //    選取的class元素中寫入新的HTML內容， innerHTML可以寫入任何的html元素標籤， 重音符號為避免單引號和雙引號的衝突,${index + 1}，指 ${資料的數值}
+        })
+    </script>
+</body>
+
+</html>

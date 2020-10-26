@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outside {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .outside .button img {
+            width: 150px;
+            height: 100px;
+        }
+
+        .button.active {
+            transform: rotate(45deg);
+            /* animation-duration:5s; */
+            transition: 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outside">
+        <div class="button">
+            <img src="https://cdn2.ettoday.net/images/2253/2253152.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        var button = document.querySelector('.button');
+        button.addEventListener('click', () => {
+            getButtonClick();
+        });
+
+        function getButtonClick() {
+            if (button.getAttribute('class') == 'button') {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+
+</html>

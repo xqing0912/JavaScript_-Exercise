@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+            /* flex-wrap: wrap; */
+        }
+
+        .block {
+            border: hotpink;
+            background-color: khaki;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="" method="POST">
+        <!--action 送出表單資料島什麼網址 -->
+        <div class="box">
+            <div>
+                <label for="">帳號：</label>
+                <input type="text" value="" placeholder="請輸入賬號" required>
+                <!-- required是提醒使用者必填欄位 ，value是預設值，使用者可以自己刪除-->
+            </div>
+            <div>
+                <label for="">密碼：</label>
+                <input type="password" placeholder="請輸入密碼" required>
+            </div>
+            <div>
+                <label for="">留言：</label>
+                <textarea name="你的留言是......" id="" cols="30" rows="10" required placeholder="請輸入留言內容"></textarea>
+            </div>
+            <div>
+                <select name="" id="">
+                    <option value="我">我</option>
+                    <option value="是">是</option>
+                    <option value="熊">熊</option>
+                    <option value="慶" selected='慶'>慶</option>
+                    <!-- value為必填欄位，這是告訴後端你傳的什麼資料，一般要同選擇的內容一樣 -->
+                </select>
+            </div>
+
+            <div><span><button type="reset">重置</button></span>
+                <span><button type="submit">送出</button></span>
+            </div>
+            <div>
+                <label for="#title">
+                    <input id="title" type="radio" name="chose">
+                </label>
+
+                <input id="title" type="radio" name="chose">
+                <input id="title" type="radio" name="chose">
+            </div>
+        </div>
+    </form>
+    <script>
+        var label_radio = document.querySelector('#title');
+        var input_radio = document.querySelector('input');
+        label_radio.addEventListener('click', function () {
+            input_radio.classList.add('block');
+        });
+    </script>
+</body>
+
+</html>

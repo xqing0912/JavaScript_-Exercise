@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masage_board</title>
+    <style>
+        .outside {
+            background-color: rgb(130, 130, 248);
+            padding: 100px;
+        }
+
+        .outside .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .mar {
+            margin-top: 30px;
+        }
+
+        .one {
+            color: cornsilk;
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .two input {
+            width: 100%;
+            height: 50px;
+
+        }
+
+        .three textarea {
+            width: 100%;
+        }
+
+        .four input {
+            width: 100%;
+            height: 50px;
+        }
+
+        .five input {
+            width: 100%;
+            height: 50px;
+        }
+
+        label {
+            color: cornsilk;
+            font-size: 30px;
+
+            font-weight: bolder;
+            /* font-family: '微軟正黑體'; */
+        }
+
+        .six {
+            display: flex;
+            justify-content: center;
+        }
+
+        .six button,
+        .six .btn {
+            margin: 20px 40px;
+            color: cornsilk;
+            font-size: 25px;
+            background-color: unset;
+            border: 1px solid cornsilk;
+            border-radius: 20px;
+            font-weight: bolder;
+        }
+
+        .six button:hover {
+            background-color: rgb(231, 133, 133);
+            color: rgb(121, 103, 235);
+            cursor: pointer;
+
+        }
+
+        .six .btn:hover {
+            background-color: rgb(231, 225, 133);
+            color: rgb(121, 103, 235);
+            cursor: pointer;
+        }
+
+        .cards {
+            width: 100%;
+            border: 1px solid beige;
+            background-color: rgb(243, 243, 205);
+
+
+        }
+
+        .cards .card {
+            margin-top: 50px;
+        }
+
+
+        .cards .card .image_box img {
+            width: 150px;
+            height: 150px;
+
+            display: block;
+        }
+
+        .cards .card a {
+            text-decoration: none;
+            color: rgb(81, 63, 247);
+            display: flex;
+
+        }
+
+        .cards .card .massage_box {
+            margin-left: 40px;
+        }
+
+        .card:hover {
+            background-color: rgb(82, 104, 230);
+        }
+
+        .cards .card a:hover {
+            color: rgb(197, 196, 207);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outside">
+        <div class="container">
+            <form action="http://ajax_lesson.digipack-develop.com/news">
+                <div class="one">
+                    留言板
+                </div>
+                <input type="text" name="date" hidden>
+                <div class="two mar">
+                    <label for="#title" class="font">標題</label><br>
+                    <input id='title' type="text" name="title">
+                </div>
+                <div class="three mar">
+                    <label for="#content" class="font">內容</label><br>
+                    <textarea id="content" name="content" cols="30" rows="30"></textarea>
+                </div>
+                <div class="four mar">
+                    <label for="#href" class="font">超鏈接</label><br>
+                    <input id="href" type="text" name="href">
+                </div>
+                <div class="five mar">
+                    <label for="#image_url" class="font">圖片連接</label><br>
+                    <input id="image_url" type="text" name="image_url">
+                </div>
+                <div class="six">
+                    <button type="reset">清除內容</button>
+                    <div class="btn" type="submit">新增留言</div>
+                </div>
+        </div>
+        </form>
+    </div>
+    <div class="cards">
+        <!-- <div class="card">
+            <a href="">
+                <div class="image_box">
+                    <img src="https://img.mp.itc.cn/upload/20170227/1ead7bf071b54e159792ce8a4d102629_th.jpg" alt="">
+                </div>
+                <div class="massage_box">
+                    <h2>標題：英系博美</h2>
+                    <p>發佈日期：2020-04-28</p>
+                    <p>內容：可愛的狗狗</p>
+                </div>
+            </a>
+        </div> -->
+    </div>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        //抓取資料庫的資料到前端頁面
+        fetch('http://ajax_lesson.digipack-develop.com/news')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                // console.log(data);
+                $.each(data, function (index, new_post) {   //jquery的forEach固定格式
+                    var old_msg = $('.cards').html();
+                    $('.cards').html(`
+                <div class="card">
+                    <a href="${new_post.href}">
+                        <div class="image_box">
+                            <img src="${new_post.image_url}" alt="">
+                        </div>
+                        <div class="massage_box">
+                            <h2>${new_post.title}</h2>
+                            <p>發佈日期：${new_post.date}</p>
+                            <p>${new_post.content}</p>
+                        </div>
+                    </a>
+            </div>
+            ${old_msg}
+            `)
+                })
+
+            })
+        $('.btn').click(function () {
+            var post_title = $('#title').val();
+            var post_content = $('#content').val();
+            var post_href = $('#href').val();
+            var post_imgUrl = $('#image_url').val();
+
+            //抓取現在的時間
+            var now_date = new Date();
+            var date = now_date.getFullYear() + '年' + (now_date.getMonth() + 1) + '月' + now_date.getDate() + '日';
+
+            // //     var old_msg = $('.cards').html();//把原本留言存起來
+
+            // //     // 導入HTML模板
+            // //     $('.cards').html(`
+            // //     <div class="card">
+            // //         <a href="${post_href}">
+            // //             <div class="image_box">
+            // //                 <img src="${post_imgUrl}" alt="">
+            // //             </div>
+            // //             <div class="massage_box">
+            // //                 <h2>${post_title}</h2>
+            // //                 <p>發佈日期：${date}</p>
+            // //                 <p>${post_content}</p>
+            // //             </div>
+            // //         </a>
+            // // </div>
+            // // ${old_msg}   // ${old_msg}就得資料呈現在下面
+            // // `)
+
+            $('input,textarea').val(''); //點擊送出按鈕時，HTML的所有輸入的內容清空
+
+            // 把資料整理成json的格式傳送
+            var post_msg = {
+                'title': post_title,  //title 是指資料庫欄位名稱，同前面的HTML的name名稱一樣，post_title是我要傳到資料庫的名稱
+                'content': post_content,
+                'href': post_href,
+                'image_url': post_imgUrl,
+                'date': date
+            }
+
+
+            $.ajax({
+                url: 'http://ajax_lesson.digipack-develop.com/news',
+                method: 'post',
+                data: post_msg,
+                
+
+                //連接網址成功後要執行的的事情
+                success: function (result) {
+                    var old_msg = $('.cards').html();//把原本留言存起來
+                    // 導入HTML模板
+                    $('.cards').html(`
+                        <div class="card">
+                            <a href="${post_href}">
+                                <div class="image_box">
+                                    <img src="${post_imgUrl}" alt="">
+                                </div>
+                                <div class="massage_box">
+                                    <h2>${post_title}</h2>
+                                    <p>發佈日期：${date}</p>
+                                    <p>${post_content}</p>
+                                </div>
+                            </a>
+                        </div>
+                        ${old_msg}
+                        `)
+                },
+                error: function (result) {
+                    console.log(result);
+                }
+            })
+
+        });
+    </script>
+</body>
+
+</html>

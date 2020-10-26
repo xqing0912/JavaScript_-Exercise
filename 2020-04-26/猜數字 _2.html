@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>點我看答案</button>
+    <div class="result"></div>
+    <script>
+        var input_value = document.querySelector('input');
+        var button_click = document.querySelector('button');
+        var result = document.querySelector('.result');
+        // var answer = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+
+        button_click.addEventListener('click', function () {
+            Check();
+        });
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        };
+        var answer = getRandom(10, 20);
+        // console.log(answer);
+        function Check() {
+            if (input_value.value > answer) {
+                alert('小一點');
+            } 
+            else if (input_value.value < answer) {
+                alert('大一點');
+            } 
+            else {
+                alert('猜對了');
+            }
+        }
+    </script>
+</body>
+
+</html>

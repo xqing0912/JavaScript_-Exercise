@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img class="change" src="https://images.chinatimes.com/newsphoto/2020-02-16/900/20200216003275.jpg" alt="">
+    <script>
+        var change_img = document.querySelector('.change');
+        change_img.addEventListener('click', function () {
+            //給圖片加上一個監聽事件，點擊的時候--->執行一個函數
+            change_img.src ="https://images.goodsmile.info/cgm/images/product/20160830/5911/40978/large/7268ee0e32fb0bea91ed4b79ad410a02.jpg";
+        });
+    </script>
+
+</body>
+
+</html>

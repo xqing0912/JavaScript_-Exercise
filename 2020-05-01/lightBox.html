@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- lightbox css cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css">
+  <title>lightBox_套件</title>
+  <style>
+    .box {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    a img {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <a href="img/1.jpg" data-lightbox="roadtrip" data-title="view"><img src="img/1.jpg" alt=""> </a>
+    <a href="img/2.jpg" data-lightbox="roadtrip">
+      <img src="img/2.jpg" alt="">
+    </a>
+    <a href="img/3.jpg" data-lightbox="roadtrip">
+      <img src="img/3.jpg" alt="">
+    </a>
+    <a href="img/4.jpg" data-lightbox="roadtrip">
+      <img src="img/4.jpg" alt="">
+    </a>
+    <a href="img/5.jpg" data-lightbox="roadtrip">
+      <img src="img/5.jpg" alt="">
+    </a>
+    <a href="img/6.jpg" data-lightbox="roadtrip">
+      <img src="img/6.jpg" alt="">
+    </a>
+  </div>
+
+  <!--lightbox  script cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox-plus-jquery.min.js"></script>
+  <script>
+    lightbox.option({
+      albumLabel: 'view %1 of %2',
+      positionFromTop: 100
+    })
+  </script>
+
+</body>
+
+</html>
