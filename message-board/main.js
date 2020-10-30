@@ -1,4 +1,4 @@
-  fetch('message.json')
+  fetch('https://xqing0912.github.io/JavaScript_-Exercise/message-board/message.json')
       .then(function (response) {
           return response.json();
       })
@@ -63,7 +63,7 @@
       }
 
       $.ajax({
-          url: 'message.json',
+          url: 'https://xqing0912.github.io/JavaScript_-Exercise/message-board/message.json',
           type: 'GET',
           data: post_msg,
           dataType: 'json',
