@@ -43,6 +43,7 @@
         }
 
         .swiper-container {
+            overflow: hidden;
             width: 100%;
             height: 100%;
         }
@@ -154,6 +155,9 @@
             } */
             .nav-item {
                 margin-right: 1em;
+            }
+            .navbar-light .navbar-toggler {
+                margin-right: 1rem;
             }
         }
 
@@ -348,13 +352,11 @@
         var navbarSupportedContent = document.querySelector('#navbarSupportedContent');
         var navbar_toggler = document.querySelector('.navbar-toggler');
         navbar_toggler.addEventListener("click", () => {
-            console.log(123);
             if (document.body.clientWidth <= 768) {
                 navbarSupportedContent.style.display = 'block';
                 navbarSupportedContent.style.display = 'flex';
                 navbarSupportedContent.style.JustifyContent = 'FlexEnd';
             }
-
         })
         // (function ($) {
         //     $(document).ready(function () {
