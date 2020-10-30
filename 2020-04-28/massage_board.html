@@ -129,7 +129,8 @@
 <body>
     <div class="outside">
         <div class="container">
-            <form action="http://ajax_lesson.digipack-develop.com/news">
+            <!-- http://ajax_lesson.digipack-develop.com/news -->
+            <form action="message.json">
                 <div class="one">
                     留言板
                 </div>
@@ -174,29 +175,29 @@
     <script src="../js/jquery-3.5.0.min.js"></script>
     <script>
         //抓取資料庫的資料到前端頁面
-        fetch('http://ajax_lesson.digipack-develop.com/news')
+        fetch('message.json') //http://ajax_lesson.digipack-develop.com/news
             .then(function (response) {
                 return response.json();
             })
             .then(function (data) {
                 // console.log(data);
-                $.each(data, function (index, new_post) {   //jquery的forEach固定格式
+                $.each(data, function (index, new_post) { //jquery的forEach固定格式
                     var old_msg = $('.cards').html();
                     $('.cards').html(`
-                <div class="card">
-                    <a href="${new_post.href}">
-                        <div class="image_box">
-                            <img src="${new_post.image_url}" alt="">
-                        </div>
-                        <div class="massage_box">
-                            <h2>${new_post.title}</h2>
-                            <p>發佈日期：${new_post.date}</p>
-                            <p>${new_post.content}</p>
-                        </div>
-                    </a>
-            </div>
-            ${old_msg}
-            `)
+                                <div class="card">
+                                    <a href="${new_post.href}">
+                                        <div class="image_box">
+                                            <img src="${new_post.image_url}" alt="">
+                                        </div>
+                                        <div class="massage_box">
+                                            <h2>${new_post.title}</h2>
+                                            <p>發佈日期：${new_post.date}</p>
+                                            <p>${new_post.content}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            ${old_msg}
+                    `)
                 })
 
             })
@@ -208,7 +209,8 @@
 
             //抓取現在的時間
             var now_date = new Date();
-            var date = now_date.getFullYear() + '年' + (now_date.getMonth() + 1) + '月' + now_date.getDate() + '日';
+            var date = now_date.getFullYear() + '年' + (now_date.getMonth() + 1) + '月' + now_date.getDate() +
+                '日';
 
             // //     var old_msg = $('.cards').html();//把原本留言存起來
 
@@ -226,30 +228,30 @@
             // //             </div>
             // //         </a>
             // // </div>
-            // // ${old_msg}   // ${old_msg}就得資料呈現在下面
+            // // ${old_msg}   // ${old_msg}把資料呈現在下面
             // // `)
 
             $('input,textarea').val(''); //點擊送出按鈕時，HTML的所有輸入的內容清空
 
             // 把資料整理成json的格式傳送
             var post_msg = {
-                'title': post_title,  //title 是指資料庫欄位名稱，同前面的HTML的name名稱一樣，post_title是我要傳到資料庫的名稱
+                'title': post_title, //title 是指資料庫欄位名稱，同前面的HTML的name名稱一樣，post_title是我要傳到資料庫的名稱
                 'content': post_content,
                 'href': post_href,
                 'image_url': post_imgUrl,
                 'date': date
             }
 
-
+            // $('input,textarea').val(''); //點擊送出按鈕時，HTML的所有輸入的內容清空
             $.ajax({
-                url: 'http://ajax_lesson.digipack-develop.com/news',
-                method: 'post',
+                url: 'message.json',
+                // method: 'post',
+                method: 'GET',
                 data: post_msg,
-                
-
+                dataType: 'json',
                 //連接網址成功後要執行的的事情
                 success: function (result) {
-                    var old_msg = $('.cards').html();//把原本留言存起來
+                    var old_msg = $('.cards').html(); //把原本留言存起來
                     // 導入HTML模板
                     $('.cards').html(`
                         <div class="card">
@@ -271,7 +273,6 @@
                     console.log(result);
                 }
             })
-
         });
     </script>
 </body>
