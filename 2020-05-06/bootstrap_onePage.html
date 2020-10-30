@@ -146,8 +146,13 @@
             #navbarSupportedContent {
                 display: flex;
                 justify-content: flex-end;
+                display: none;
             }
-            .nav-item{
+
+            /* #navbarSupportedContent .active {
+                display: block;
+            } */
+            .nav-item {
                 margin-right: 1em;
             }
         }
@@ -340,6 +345,17 @@
         $('.parallax-window').parallax({
             imageSrc: 'https://i1.hdslb.com/bfs/archive/d0a4ec0f0106f31bdfb92b8bf7dea188598e3929.jpg'
         });
+        var navbarSupportedContent = document.querySelector('#navbarSupportedContent');
+        var navbar_toggler = document.querySelector('.navbar-toggler');
+        navbar_toggler.addEventListener("click", () => {
+            console.log(123);
+            if (document.body.clientWidth <= 768) {
+                navbarSupportedContent.style.display = 'block';
+                navbarSupportedContent.style.display = 'flex';
+                navbarSupportedContent.style.JustifyContent = 'FlexEnd';
+            }
+
+        })
         // (function ($) {
         //     $(document).ready(function () {
         //         $('.parallax-window').parallax({

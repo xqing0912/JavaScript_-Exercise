@@ -203,6 +203,17 @@
             color: rgb(223, 119, 119);
         }
 
+        @media (min-width: 1920px) {
+
+            .container,
+            .container-lg,
+            .container-md,
+            .container-sm,
+            .container-xl {
+                max-width: 80%;
+            }
+        }
+
         @media (min-width: 1800px) {
 
             .container,
@@ -225,16 +236,6 @@
             }
         }
 
-        @media (min-width: 1920px) {
-
-            .container,
-            .container-lg,
-            .container-md,
-            .container-sm,
-            .container-xl {
-                max-width: 80%;
-            }
-        }
     </style>
 </head>
 
@@ -381,6 +382,7 @@
             },
             loop: true
         });
+       
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
