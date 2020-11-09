@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>猜數字</title>
 </head>
 
 <body>
     <input type="text">
-    <button>點我看答案</button>
+    <button>點我查看答案</button>
     <div class="result"></div>
     <script>
         var input_value = document.querySelector('input');
@@ -29,11 +29,9 @@
         function Check() {
             if (input_value.value > answer) {
                 alert('小一點');
-            } 
-            else if (input_value.value < answer) {
+            } else if (input_value.value < answer) {
                 alert('大一點');
-            } 
-            else {
+            } else {
                 alert('猜對了');
             }
         }
