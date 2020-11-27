@@ -13,6 +13,9 @@
         .mar {
             margin-top: 30px;
         }
+        input,textarea{
+            padding-left: 1rem;
+        }
 
         .one {
             color: cornsilk;
