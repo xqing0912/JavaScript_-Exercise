@@ -114,10 +114,10 @@
         }
 
         .card:hover {
-            background-color: rgb(82, 104, 230);
+            background-color: rgb(130,130,248);
         }
 
         .cards .card a:hover {
-            color: rgb(197, 196, 207);
+            color: #eee;
         }
    
