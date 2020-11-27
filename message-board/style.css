@@ -2,7 +2,6 @@
         .outside {
             background-color: rgb(130, 130, 248);
             padding: 100px;
-
         }
 
         .outside .container {
@@ -28,7 +27,6 @@
         .two input {
             width: 100%;
             height: 50px;
-
         }
 
         .three textarea {
@@ -48,9 +46,7 @@
         label {
             color: cornsilk;
             font-size: 30px;
-
             font-weight: bolder;
-            /* font-family: '微軟正黑體'; */
         }
 
         .six {
@@ -73,7 +69,6 @@
             background-color: rgb(231, 133, 133);
             color: rgb(121, 103, 235);
             cursor: pointer;
-
         }
 
         .six .btn:hover {
@@ -86,8 +81,6 @@
             width: 100%;
             border: 1px solid beige;
             background-color: rgb(243, 243, 205);
-
-
         }
 
         .cards .card {
